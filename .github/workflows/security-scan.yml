@@ -1,0 +1,27 @@
+name: Security Scan
+
+# When should this run? On every push and pull request to main.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checkov:
+    name: Run Checkov IaC scan
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Get a copy of the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Run the Checkov scan on all Terraform
+      - name: Run Checkov
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: .
+          framework: terraform
+          quiet: true
+          soft_fail: false
