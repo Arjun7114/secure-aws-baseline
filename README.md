@@ -1,5 +1,6 @@
 # Secure AWS Baseline with Automated Policy-as-Code Pipeline
 
+![Security Scan](https://github.com/Arjun7114/secure-aws-baseline/actions/workflows/security-scan.yml/badge.svg)
 A secure-by-default AWS environment built entirely with **Terraform**, guarded by a **CI/CD security pipeline** that automatically scans every change with **Checkov** and **blocks insecure infrastructure from ever being merged**.
 
 This project demonstrates a complete **DevSecOps "shift-left" workflow**: security is enforced automatically at the pull-request stage, so a misconfiguration is caught *before* it can ever reach the cloud — not audited after the fact.
@@ -53,7 +54,7 @@ flowchart TD
 To validate the security gate, a **deliberately insecure S3 bucket** (public access enabled, no encryption) was submitted through a pull request. The pipeline caught it automatically and blocked the merge:
 
 <!-- Add your blocked-merge screenshot here. Example:
-![Pipeline blocking an insecure pull request](docs/blocked-merge.png)
+![Pipeline blocking an insecure pull request](docsblocked-merge.png)
 -->
 
 The required `Run Checkov IaC scan` check failed within seconds, and the merge button was disabled — exactly as designed.
