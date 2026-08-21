@@ -151,4 +151,4 @@ resource "aws_flow_log" "main" {
 resource "aws_default_security_group" "default" {
   vpc_id = aws_vpc.main.id
   # No ingress or egress rules = deny all traffic
-}   
+}    
