@@ -1,0 +1,7 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+vscode.deb
+checkov_report.txt
