@@ -52,6 +52,8 @@ flowchart TD
 
 ## Proof the pipeline works
 
+See [SECURITY_DECISIONS.md](SECURITY_DECISIONS.md) for the threat model, attack-to-control mapping, and documented risk decisions.
+
 To validate the security gate, a **deliberately insecure S3 bucket** (public access enabled, no encryption) was submitted through a pull request. The pipeline caught it automatically and blocked the merge:
 
 <!-- Add your blocked-merge screenshot here. Example:
